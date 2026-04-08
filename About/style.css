@@ -1,0 +1,133 @@
+body {
+            margin: 0;
+            padding: 0;
+            background-image: url('unimus.jpg'); /* Gambar kampus */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION BAR GAYA KACA/NEON (NUANSA SAMA) --- */
+        .bagian-atas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan */
+            backdrop-filter: blur(10px); /* Efek kaca buram */
+            width: 100%;
+            height: 10vh;
+            border-bottom: 2px solid #00f2fe; /* Garis batas bawah biru neon */
+            z-index: 1000;
+        }
+
+        .bagian-ul {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu List dengan Transisi Mulus */
+        .bagian-li {
+            border: 2px solid #00f2fe;
+            list-style-type: none;
+            padding: 8px 15px;
+            margin: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Kunci animasi halus */
+        }
+
+        .bagian-li a {
+            text-decoration: none;
+            color: rgb(245, 243, 243);
+            font-weight: bold;
+        }
+
+        /* Efek Hover Menu */
+        .bagian-li:hover {
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6); /* Kotak menyala biru saat disorot */
+            transform: translateY(-3px); /* Tombol sedikit terangkat */
+        }
+
+        .bagian-li a:hover {
+            color: #ff00de; /* Teks berubah ungu/pink neon */
+        }
+
+        /* --- KARTU PROFIL (GLASSMORPHISM CYBERPUNK) --- */
+        .card {
+            background-color: rgba(0, 0, 0, 0.6); /* Kaca gelap transparan */
+            backdrop-filter: blur(12px); /* Efek kaca buram di latar kampus */
+            padding: 30px 40px;
+            border-radius: 20px; /* Sudut membulat elegan */
+            border: 1px solid rgba(0, 242, 254, 0.3); /* Bingkai transparan biru */
+            
+            /* Lapisan bayangan dan cahaya neon memancar */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 242, 254, 0.2);
+            
+            max-width: 600px;
+            width: 100%;
+            margin-top: 15vh; /* Jarak agar tidak tertutup menu */
+            margin-bottom: 5vh;
+            text-align: center; /* Teks rata tengah agar rapi */
+        }
+
+        /* --- GAYA FOTO PROFIL ANDA --- */
+        .profile-pic {
+            max-width: 150px;
+            width: 100%;
+            border-radius: 50%; /* Membuat foto menjadi lingkaran */
+            border: 3px solid #00f2fe; /* Bingkai biru neon khas */
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6); /* Cahaya neon pada foto */
+            margin: 0 auto 20px auto; /* Tengahkan foto dan beri jarak ke bawah */
+            display: block;
+        }
+
+        /* Judul Profil */
+        h1 {
+            color: #00f2fe; /* Cyan neon */
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+            text-align: center;
+            border-bottom: 2px solid #00f2fe;
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        /* Sub-judul (Biodata, dll.) */
+        h3 {
+            color: #ff00de; /* Ungu/Pink neon khas J-Pop/Jam Digital */
+            text-shadow: 0 0 8px rgba(255, 0, 222, 0.6);
+            margin-top: 25px;
+            border-left: 4px solid #ff00de; /* Garis samping ungu */
+            padding-left: 10px;
+            text-align: left; /* Teks heading rata kiri */
+        }
+
+        /* Teks Paragraf dan List */
+        p, ul li {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #e0e0e0; /* Putih keabu-abuan agar nyaman dibaca */
+            text-align: left; /* Teks isi rata kiri */
+        }
+
+        /* List Styling */
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        /* Highlight untuk Label Biodata */
+        .highlight {
+            font-weight: bold;
+            color: #00f2fe; /* Cyan neon untuk label */
+        }
+        

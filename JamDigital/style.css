@@ -1,0 +1,139 @@
+/* JamDigital/style.css */
+
+/* --- MENERAPKAN LATAR BELAKANG CYBERPUNK --- */
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Kunci untuk penempatan absolute jam */
+    min-height: 100vh;
+    
+    background-image: url('cyber.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* NAVIGATION BAR (Menyesuaikan agar serasi) */
+.bagian-atas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 8vh; /* Sedikit dikecilkan agar rapi */
+    z-index: 1000;
+}
+
+.bagian-ul {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* MENAMBAHKAN EFEK TRANSISI PADA MENU JAM DIGITAL */
+.bagian-li {
+    border: 2px solid #00f2fe;
+    list-style-type: none;
+    padding: 8px 15px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Animasi halus selama 0.3 detik */
+}
+
+.bagian-li a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.bagian-li:hover {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.6); /* Kotak menyala biru saat disorot */
+    transform: translateY(-3px); /* Efek tombol terangkat */
+}
+
+.bagian-li a:hover {
+    color: #ff00de; /* Teks berubah ungu neon */
+}
+
+/* --- MENDESAIN KOTAK JAM DIGITAL CYBERPUNK (GLASSMORPHISM KAYA) --- */
+.jam-digital {
+    /* Penempatan di area langit yang benar di atas gedung tengah */
+    position: absolute;
+    top: 20vh; /* Turun sedikit dari navbar */
+    left: 50%; /* Tengahkan */
+    transform: translateX(-50%); /* Kunci untuk menengahkan secara horizontal */
+
+    /* Desain Glassmorphism yang keren */
+    background-color: rgba(0, 0, 0, 0.45); /* Hitam semi-transparan buram */
+    backdrop-filter: blur(15px); /* Efek kaca buram yang lebih kuat */
+    
+    border: 3px solid #00f2fe; /* Bingkai biru neon yang lebih tebal */
+    border-radius: 20px; /* Sudut membulat yang lebih elegan */
+    padding: 30px 60px; /* Penyesuaian padding */
+    
+    /* Efek cahaya neon biru yang lembut */
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6); 
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Susunan vertikal (atas-bawah) */
+    align-items: center;
+}
+
+/* Gaya Judul Jam */
+.area-waktu h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0 0 10px #00f2fe; 
+    font-family: Arial, sans-serif;
+}
+
+/* Gaya Teks Jam (Waktu) - Font Kustom Orbitron */
+#jam {
+    font-size: 90px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1; /* Agar teks tidak terlalu jauh jaraknya */
+    
+    /* GAYA NEON DIGITAL */
+    color: #00f2fe; /* Warna cyan neon dasar */
+    
+    /* Lapisan efek cahaya neon (Luminous Glow) */
+    text-shadow: 0 0 10px #00f2fe, 
+                 0 0 20px #00f2fe, 
+                 0 0 30px #ff00de, /* Gradasi ungu/pink neon di lapisan luar */
+                 0 0 40px #ff00de;
+    
+    font-family: 'Orbitron', monospace; /* Gunakan font kustom futuristik */
+}
+
+/* --- MENDESAIN AREA TEKS HARI & TANGGAL (GAYA BERBEDA) --- */
+.area-hari {
+    margin-top: 20px; /* Jarak dari area jam */
+    width: 100%;
+}
+
+/* Gaya Teks Hari & Tanggal (Warna Neon Ungu) */
+#hari-tanggal {
+    font-size: 22px;
+    margin: 0;
+    color: #ff00de; /* Warna ungu neon dasar */
+    
+    /* Efek cahaya neon ungu lembut */
+    text-shadow: 0 0 5px #ff00de, 
+                 0 0 10px #ff00de;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font bersih agar mudah dibaca */
+    background-color: rgba(255, 0, 222, 0.1); /* Latar belakang teks ungu semi-transparan tipis */
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid #ff00de; /* Border tipis ungu neon */
+}

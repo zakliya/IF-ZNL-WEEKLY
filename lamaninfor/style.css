@@ -1,0 +1,155 @@
+*, html{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('jpop.jpg');
+    background-size: cover; /* Membuat gambar memenuhi layar */
+    background-position: center; /* Memosisikan gambar di tengah */
+    background-attachment: fixed; /* Membuat background diam/tidak ikut bergerak saat di-scroll */
+    font-family: Arial, sans-serif;
+}
+
+/* --- NAVIGATION BAR (HEADER) GAYA KACA/NEON --- */
+.bagian-atas {
+    background-color: rgba(0, 0, 0, 0.7); /* Mengganti merah menjadi hitam transparan */
+    backdrop-filter: blur(10px); /* Memberi efek kaca buram */
+    width: 100%;
+    height: 10vh;
+    border-bottom: 2px solid #00f2fe; /* Menambahkan garis batas biru neon di bawah menu */
+    
+    /* Memastikan posisinya menempel di atas (opsional) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.bagian-ul {
+    display: flex;
+    height: 100%; /* Disesuaikan dengan tinggi bagian-atas */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- TRANSISI MENU NAVIGATION BAR LAMANINFOR --- */
+.bagian-li {
+    border: 2px solid #00f2fe;
+    list-style-type: none;
+    padding: 8px 15px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Ini adalah kunci animasi transisi halusnya */
+}
+
+.bagian-li a {
+    text-decoration: none;
+    color: rgb(245, 243, 243);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Efek saat kursor mengenai tombol menu */
+.bagian-li:hover {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.6); /* Kotak memancarkan cahaya biru neon */
+    transform: translateY(-3px); /* Efek tombol terangkat ke atas secara halus */
+}
+
+.bagian-li a:hover {
+    color: #ff00de; /* Teks berubah menjadi pink neon menyala khas J-Pop */
+}
+
+/* --- GANTI BAGIAN INI --- */
+/* Mengatur kotak informasi agar transparan dan keren */
+.bagian-content {
+    background-color: rgba(0, 0, 0, 0.75); /* Warna hitam dengan tingkat transparansi 75% */
+    backdrop-filter: blur(8px); /* Memberikan efek kaca buram pada background di belakangnya */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    
+    /* Tambahan agar terlihat seperti kartu yang mengambang */
+    margin: 40px auto; /* Memberikan jarak dari sisi atas, bawah, kiri, dan kanan layarmu */
+    max-width: 1000px; /* Membatasi kelebaran kotak */
+    border-radius: 15px; /* Membuat sudut kotak menjadi membulat */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Memberikan efek bayangan */
+}
+
+/* --- TAMBAHKAN KODE DI BAWAH INI --- */
+
+/* Mengatur ukuran gambar agar proporsional */
+.bagian-img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px; /* Membuat sudut gambar sedikit membulat */
+    border: 3px solid rgb(180, 14, 14); /* Memberi bingkai merah senada dengan tema */
+}
+
+/* Mengatur area teks */
+.info-artist {
+    color: rgb(245, 243, 243); /* Warna teks putih keabu-abuan agar tidak bikin sakit mata di layar hitam */
+    max-width: 500px;
+    font-family: Arial, sans-serif;
+}
+
+/* Mengatur judul di dalam kotak informasi */
+.info-artist h2 {
+    color: rgb(180, 14, 14); /* Warna judul merah */
+    border-bottom: 2px solid white; /* Garis bawah sebagai pembatas */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Mengatur paragraf */
+.info-artist p {
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: justify; /* Membuat teks rata kanan-kiri */
+}
+
+
+.bagian-img {
+    width: 50% ;
+}
+
+/* --- FOOTER GAYA KACA/NEON --- */
+.bagian-bawah {
+    background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan menyamakan header */
+    backdrop-filter: blur(10px);
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #ff66b2; /* Garis batas atas warna pink neon */
+    margin-top: 50px; /* Memberi jarak dari kotak Yukina */
+}
+
+.bagian-h2 {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Memberi jarak antar huruf agar terlihat modern */
+    text-shadow: 0 0 8px #ff66b2; /* Teksnya memancarkan cahaya pink */
+}
+/* Menghilangkan garis bawah dan mengatur warna link */
+.bagian-li a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: rgb(232, 223, 223); /* Menyamakan warna dengan teks aslinya */
+}
+
+/* (Opsional) Memberikan efek saat kursor diarahkan ke menu */
+.bagian-li a:hover {
+    color:#ff00de; /* Berubah jadi biru muda saat disorot */
+}
+/* --- CSS UNTUK KONTEN YUKINA (SUSUNAN ATAS-BAWAH) --- */
