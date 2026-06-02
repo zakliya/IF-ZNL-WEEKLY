@@ -1,3 +1,33 @@
+<?php
+    echo "hello word";
+    $nama = "zakliya";
+    echo "<br>";
+    echo "Nama Saya $nama";
+    echo "<br>";
+    echo "hai $nama";
+    $koneksi = mysqli_connect("localhost", "root", "", "weeklyzakliya");
+    if(!$koneksi){
+        echo mysqli_connect_error($koneksi);
+    }else{
+        echo "koneksi berhasil !!!!";
+    }
+    echo "<br>";
+    $query = "SELECT * FROM mahasiswa";
+    $result =  mysqli_query($koneksi, $query);
+    var_dump($result);
+    // echo "<br>";
+    // $mhs = mysqli_fetch_row($result);
+    // var_dump($mhs[1]);
+    // echo "<br>";
+    // var_dump($mhs);
+    // echo "<br>";
+    $mhsa = mysqli_fetch_assoc($result);
+    // var_dump($mhsa);
+    // var_dump($mhsa['nama']);
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +42,15 @@
         <table class="dashboard">
             <tr>
                 <td >
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </td>
                 <td>
-                    <a href="Profil.html">Profile</a>
+                    <a href="Profil.php">Profile</a>
                 </td>
                 <td>
-                    <a href="Contact.html">Contact</a>
+                    <a href="Contact.php">Contact</a>
                 </td>
-                <td><a href="Mahasiswa.html">Data Mahasiswa</a></td>
+                <td><a href="Mahasiswa.php">Data Mahasiswa</a></td>
             </tr>
         </table>
         <h3>Data Mahasiswa</h3>
@@ -39,6 +69,30 @@
                 <th>UAS</th>
                 <th>TUGAS</th>
             </tr>
+            <?php
+            // 3. PROSES FRONTEND: Looping Data ke dalam Tabel HTML
+            $no = 1; // Variabel bantuan untuk membuat nomor urut otomatis
+            
+            // mysqli_fetch_assoc mengubah data dari database menjadi Array Asosiatif (key-nya adalah nama kolom database)
+            while ($mhsa = mysqli_fetch_assoc($result)) {
+        ?>
+        
+        <tr>
+            <td align="center"><?= $no; ?></td>
+            <td><?= $mhsa['nama']; ?></td>
+            <td align="center"><?= $mhsa['nim']; ?></td>
+            <td align="center"><?= $mhsa['jurusan']; ?></td>
+            <td><?= $mhsa['email']; ?></td>
+            <td><?= $mhsa['no_hp']; ?></td>
+            <td align="center">
+                <img src="Aset/ronaldo.webp<?= $mhsa['foto']; ?>" width="70" height="70" alt="Foto <?= $mhsa['nama']; ?>" style="object-fit: cover; border-radius: 5px;">
+            </td>
+        </tr>
+
+        <?php
+                $no++; // Tambahkan 1 ke nomor urut setiap kali baris baru dibuat
+            } // Penutup dari blok while
+        ?>
             <tr>
                 <td>1</td>
                 <td>Zakliya</td>
@@ -47,6 +101,7 @@
                 <td>100</td>
                 <td><img src="Aset/Gambar/ronaldo.webp" height="75"/></td>
             </tr>
+            
             <tr>
                 <td>2</td>
                 <td>Ujang</td>
@@ -63,6 +118,7 @@
                 <td>80</td>
                 <td><img src="https://i.pinimg.com/736x/a7/e6/28/a7e6280c61ff034fecc98313413907cc.jpg"  height="80" width="75"></td>
             </tr>
+            
         </table>
         <hr>
         <table border="1" cellspacing="0">

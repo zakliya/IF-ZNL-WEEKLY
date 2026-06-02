@@ -8,16 +8,16 @@
         <table border="1" cellspacing="0" cellpadding="5">
             <tr>
                 <td >
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </td>
                 <td>
-                    <a href="Profil.html">Profile</a>
+                    <a href="Profil.php">Profile</a>
                 </td>
                 <td>
-                    <a href="Contact.html">Contact</a>
+                    <a href="Contact.php">Contact</a>
                 </td>
                 <td>
-                    <a href="Mahasiswa.html">Data Mahasiswa</a>
+                    <a href="Mahasiswa.php">Data Mahasiswa</a>
                 </td>
             </tr>
         </table>
