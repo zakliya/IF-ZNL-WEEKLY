@@ -4,7 +4,7 @@ require 'koneksi.php';
 
 // 2. Mengambil data dari tabel mahasiswa
 $query = "SELECT * FROM mahasiswa";
-$result = mysqli_query($koneksi, $query);
+$mahasiswas = tampildata($query);//menghasilkan data dalam wadah
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $result = mysqli_query($koneksi, $query);
     </table>
     
     <h3>Data Mahasiswa</h3>
-    <a href="inputdata.html"><button>Tambah Data Mahasiswa</button></a>
+    <a href="inputdata.php"><button>Tambah Data Mahasiswa</button></a>
     <hr>
     
     <table class="table" border="1" cellspacing="0" cellpadding="8">
@@ -48,18 +48,19 @@ $result = mysqli_query($koneksi, $query);
         $no = 1;
         
         // mysqli_fetch_assoc memecah data per baris menjadi array asosiatif
-        while ($mhsa = mysqli_fetch_assoc($result)) {
+        foreach($mahasiswas as $mhsa)
+        {
         ?>
         
         <tr>
             <td align="center"><?= $no; ?></td>
-            <td><?= htmlspecialchars($mhsa['nama']); ?></td>
-            <td align="center"><?= htmlspecialchars($mhsa['nim']); ?></td>
-            <td align="center"><?= htmlspecialchars($mhsa['jurusan']); ?></td>
-            <td><?= htmlspecialchars($mhsa['email']); ?></td>
-            <td><?= htmlspecialchars($mhsa['no_hp']); ?></td>
+            <td><?= htmlspecialchars($mhsa[1]); ?></td>
+            <td align="center"><?= htmlspecialchars($mhsa[2]); ?></td>
+            <td align="center"><?= htmlspecialchars($mhsa[3]); ?></td>
+            <td><?= htmlspecialchars($mhsa[4]); ?></td>
+            <td><?= htmlspecialchars($mhsa[5]); ?></td>
             <td align="center">
-                <img src="Aset/<?= htmlspecialchars($mhsa['foto']); ?>" width="70" height="70" alt="Foto <?= $mhsa['nama']; ?>" style="object-fit: cover; border-radius: 5px;">
+                <img src="Aset/<?= htmlspecialchars($mhsa[6]); ?>" width="70" height="70" alt="Foto <?= $mhsa[1]; ?>" style="object-fit: cover; border-radius: 5px;">
             </td>
         </tr>
 
